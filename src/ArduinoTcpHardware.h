@@ -78,7 +78,10 @@ public:
   int read(){
     if (tcp_.connected())
     {
+      if (tcp_.available())
+      {
         return tcp_.read();
+      }
     }
     else
     {
